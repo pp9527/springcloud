@@ -13,6 +13,14 @@ spring:
     password: root
 
 
+eureka:
+  client:
+    register-with-eureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
+
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   type-aliases-package: com.entities
