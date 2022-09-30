@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 /**
  * @author: pwz
  * @create: 2022/9/29 11:05
- * @Description:
+ * @Description: 返回结果
  * @FileName: CommonResult
  */
 @Data
