@@ -32,14 +32,14 @@ public class PaymentController {
     private String serverPort;
 
     @GetMapping(value = "/payment/discovery")
-    public Object discovery(){
+    public Object discovery() {
         List<String> services = discoveryClient.getServices();
         for (String element : services) {
-            log.info("***** element:"+element);
+            log.info("***** element:" + element);
         }
         List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
         for (ServiceInstance instance : instances) {
-            log.info(instance.getServiceId()+"\t"+instance.getHost()+"\t"+instance.getPort()+"\t"+instance.getUri());
+            log.info(instance.getServiceId() + "\t" + instance.getHost() + "\t" + instance.getPort() + "\t" + instance.getUri());
         }
         return this.discoveryClient;
     }
@@ -53,6 +53,11 @@ public class PaymentController {
         } else {
             return new CommonResult(444, "插入数据库失败", null);
         }
+    }
+
+    @GetMapping(value = "/payment/lb")
+    public String getPaymentLB() {
+        return serverPort;
     }
 
     @GetMapping(value = "/payment/get/{id}")
