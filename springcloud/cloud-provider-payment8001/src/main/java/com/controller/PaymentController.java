@@ -76,6 +76,7 @@ public class PaymentController {
     @GetMapping(value = "/payment/feign/timeout")
     public String paymentFeignTimeout() {
         try {
+            // 业务逻辑处理正确，但是需要耗费3秒钟
             TimeUnit.SECONDS.sleep(3);
         } catch (Exception e) {
             e.printStackTrace();
@@ -83,5 +84,10 @@ public class PaymentController {
         return serverPort;
     }
 
+    // ====================> zipkin+sleuth
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin() {
+        return "hi ,i'am payment_zipkin server fall back，O(∩_∩)O哈哈~";
+    }
 
 }
