@@ -3,3 +3,8 @@
 	描述：服务监控hystrixDashboard模块cloud-consumer-hystrix-dashboard9001监控cloud-provider-hystrix-payment8001，监控页面显示Unable to connect to Command Metric Stream
 	报错：ashboardConfiguration$ProxyStreamServlet : Origin parameter: http://localhost:9000/actuator/hystrix.stream is not in the allowed list of proxy host names.  If it should be allowed add it to hystrix.dashboard.proxyStreamAllowList.
 	解决：监控工程9001加入配置 hystrix: dashboard: proxy-stream-allow-list: "localhost"
+功能：使用Nacos作为服务注册中心
+	位置：cloud-alibaba-provider-payment9001、cloud-alibaba-provider-payment9002、cloud-alibaba-consumer-nacos-order83模块
+	描述：使用83调用9001、9002服务时前台报500
+	报错：后台空指针
+	解决：将以上模块启动类前均加一层目录，将启动类及其他包由先前的java.com包下移动到java.com.springcloud包下，服务调用成功
