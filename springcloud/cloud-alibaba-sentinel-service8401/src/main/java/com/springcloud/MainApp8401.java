@@ -5,13 +5,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
- * @auther zzyy
- * @create 2020-02-23 14:44
+ * @author: pwz
+ * @create: 2022/10/8 15:55
+ * @Description:
+ * @FileName: MainApp8401
  */
 @EnableDiscoveryClient
 @SpringBootApplication
-public class OrderNacosMain83 {
+public class MainApp8401 {
     public static void main(String[] args) {
-        SpringApplication.run(OrderNacosMain83.class, args);
+        SpringApplication.run(MainApp8401.class, args);
     }
 }
